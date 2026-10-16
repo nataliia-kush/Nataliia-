@@ -15,3 +15,50 @@ nav?.querySelectorAll('a').forEach((link) => {
 });
 
 document.querySelector('#year').textContent = new Date().getFullYear();
+
+
+// The three supplied portraits rotate every five seconds.
+(() => {
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const slides = Array.from(document.querySelectorAll('.about-slide'));
+  let active = Math.max(0, slides.findIndex(slide => slide.classList.contains('is-active')));
+  let timer;
+  const restart = () => {
+    window.clearInterval(timer);
+    if (slides.length < 2 || motion.matches || document.hidden) return;
+    timer = window.setInterval(() => {
+      slides[active].classList.remove('is-active');
+      active = (active + 1) % slides.length;
+      slides[active].classList.add('is-active');
+    }, 5000);
+  };
+  restart();
+  document.addEventListener('visibilitychange', restart);
+  motion.addEventListener('change', restart);
+
+  const video = document.querySelector('.hero-video');
+  const media = document.querySelector('.hero-media');
+  const button = document.querySelector('.hero-film-toggle');
+  if (!video || !media || !button) return;
+  video.muted = true;
+  video.defaultMuted = true;
+  const play = () => {
+    video.play().catch(() => { button.hidden = false; });
+  };
+  video.addEventListener('playing', () => {
+    media.classList.add('is-playing');
+    button.hidden = true;
+  });
+  video.addEventListener('error', () => {
+    media.classList.remove('is-playing');
+    button.hidden = false;
+  });
+  button.addEventListener('click', play);
+  if (motion.matches) {
+    video.pause();
+    video.removeAttribute('autoplay');
+    button.hidden = false;
+  } else {
+    play();
+  }
+})();

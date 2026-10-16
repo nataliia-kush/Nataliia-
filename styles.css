@@ -30,8 +30,12 @@ img { width: 100%; }
 .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(12,11,10,.27), rgba(12,11,10,.48) 55%, rgba(12,11,10,.58)); }
 .hero-media { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; overflow: hidden; background: #1b1a18; }
 .hero-image, .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.hero-image { object-position: center 42%; animation: portrait-out 1.2s ease 60s forwards; }
-.hero-video { opacity: 0; object-fit: cover; object-position: center center; animation: film-in 1.2s ease 60s forwards; background: #1b1a18; }
+.hero-image { object-position: center 42%; opacity: 1; transition: opacity .65s ease; }
+.hero-video { opacity: 0; object-fit: cover; object-position: center center; transition: opacity .65s ease; background: #1b1a18; }
+.hero-media.is-playing .hero-video { opacity: 1; }
+.hero-media.is-playing .hero-image { opacity: 0; }
+.hero-film-toggle { position: absolute; bottom: 20px; right: 20px; z-index: 4; padding: 10px 16px; background: rgba(27,26,24,.7); color: #fff; border: 1px solid rgba(255,255,255,.7); cursor: pointer; font: inherit; }
+.hero-film-toggle[hidden] { display: none; }
 @keyframes portrait-out { to { opacity: 0; visibility: hidden; } }
 @keyframes film-in { to { opacity: 1; } }
 .hero-copy { position: relative; z-index: 2; width: min(900px, 100%); padding: 25px 0 35px; text-align: center; text-shadow: 0 1px 15px rgba(0,0,0,.22); }
@@ -332,4 +336,7 @@ img { width: 100%; }
   *, *::before, *::after { transition: none !important; }
   .hero-image { animation: none; opacity: 1; visibility: visible; }
   .hero-video { display: none; }
+  .hero-media.is-playing .hero-video { display: block; }
+  .hero-media.is-playing .hero-image { opacity: 0; }
 }
+
