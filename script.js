@@ -42,23 +42,32 @@ document.querySelector('#year').textContent = new Date().getFullYear();
   if (!video || !media || !button) return;
   video.muted = true;
   video.defaultMuted = true;
+  video.loop = false;
+  let photoTimer;
   const play = () => {
+    window.clearTimeout(photoTimer);
     video.play().catch(() => { button.hidden = false; });
+  };
+  const showPhoto = () => {
+    window.clearTimeout(photoTimer);
+    video.pause();
+    media.classList.remove('is-playing');
+    video.currentTime = 0;
+    button.hidden = true;
+    if (!motion.matches) photoTimer = window.setTimeout(play, 60000);
+    else button.hidden = false;
   };
   video.addEventListener('playing', () => {
     media.classList.add('is-playing');
     button.hidden = true;
   });
+  video.addEventListener('ended', showPhoto);
   video.addEventListener('error', () => {
+    window.clearTimeout(photoTimer);
     media.classList.remove('is-playing');
     button.hidden = false;
   });
   button.addEventListener('click', play);
-  if (motion.matches) {
-    video.pause();
-    video.removeAttribute('autoplay');
-    button.hidden = false;
-  } else {
-    play();
-  }
+  motion.addEventListener('change', showPhoto);
+  showPhoto();
 })();
