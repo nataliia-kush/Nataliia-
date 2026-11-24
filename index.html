@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20261107-bespoke" />
+    <link rel="stylesheet" href="styles.css?v=20261124-bridal" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -18,7 +18,7 @@
       <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
       <a class="brand" href="#home" aria-label="Nataliia Kushnir home"><span class="brand-monogram">NK</span><span class="brand-name">NATALIIA KUSHNIR</span></a>
       <nav class="main-nav" id="main-nav" aria-label="Main navigation">
-        <a href="#events">Live Events</a><a href="#portfolio">Portfolio</a><a href="#guest-portraits">Guest Portraits</a><a href="#bespoke">Bespoke</a><a href="pricing.html">Pricing</a><a href="#about">About</a><a href="#contact">Contact</a>
+        <a href="#events">Live Events</a><a href="#portfolio">Portfolio</a><a href="#bridal-illustrations">Bridal</a><a href="#guest-portraits">Guest Portraits</a><a href="#bespoke">Bespoke</a><a href="pricing.html">Pricing</a><a href="#about">About</a><a href="#contact">Contact</a>
       </nav>
       <a class="nav-enquire" href="#contact">Enquire <span>↗</span></a>
     </header>
@@ -63,9 +63,22 @@
           <figure class="portfolio-card portfolio-card-detail"><img src="site-fashion-study-0285.jpg" alt="Fashion illustration by Nataliia Kushnir" /><figcaption><span>Fashion study</span><span>Full-figure illustration</span></figcaption></figure>
           <figure class="portfolio-card portfolio-card-accessories"><img src="site-fashion-accessories-new.jpg" alt="Watercolour illustrations of a handbag and blue high-heeled shoes" /><figcaption><span>Accessories &amp; details</span><span>Painted by hand</span></figcaption></figure>
           <figure class="portfolio-card portfolio-card-sketchbook portfolio-card-sketchbook-cropped"><img src="site-fashion-sketchbook-crop.jpg" alt="Full-figure fashion sketches arranged on a sketchbook page" /><figcaption><span>From the sketchbook</span><span>Fashion studies</span></figcaption></figure>
-          <figure class="portfolio-card portfolio-card-wedding"><img src="portfolio-illustration-13.JPG" width="1443" height="2048" loading="lazy" alt="Full-figure fashion illustration of a woman in a black outfit with a handbag and heeled boots" /><figcaption><span>A study in black</span><span>Full-figure illustration</span></figcaption></figure>
-          <figure class="portfolio-card portfolio-card-wedding"><img src="portfolio-illustration-14.JPG" width="1443" height="2048" loading="lazy" alt="Full-figure fashion illustration of a woman in a flowing white gown" /><figcaption><span>A flowing silhouette</span><span>Full-figure illustration</span></figcaption></figure>
-          <figure class="portfolio-card portfolio-card-wedding"><img src="portfolio-illustration-15.JPG" width="1443" height="2048" loading="lazy" alt="Full-figure fashion illustration of a woman in a pale gown with sculptural sleeves" /><figcaption><span>Sculptural elegance</span><span>Full-figure illustration</span></figcaption></figure>
+        </div>
+      </section>
+
+      <section class="bridal-illustrations" id="bridal-illustrations" aria-labelledby="bridal-title">
+        <div class="bridal-intro">
+          <p class="eyebrow">Bespoke bridal illustration</p>
+          <h2 id="bridal-title">Bridal Gown<br /><em>Illustrations</em></h2>
+          <p class="bridal-tagline">A dress worth remembering, painted by hand.</p>
+          <p>Your wedding dress holds more than beautiful details — it holds the story of a moment you’ll always remember. I create bespoke watercolour illustrations that capture its silhouette and special details in a piece of art made to keep.</p>
+          <p>For bridal boutiques and designers, I also create illustrations for lookbooks, collection launches and thoughtful gifts for brides.</p>
+          <a class="bridal-link" href="#contact" onclick="document.getElementById('tab-commission').click(); document.querySelector('#panel-commission select[name=&quot;Commission type&quot;]').value='Bridal gown illustration'">Enquire about an illustration</a>
+          <p class="bridal-note">Pricing and timing are tailored to your illustration.</p>
+        </div>
+        <div class="bridal-gallery" aria-label="Bridal gown sketches and finished watercolour illustrations">
+          <figure class="bridal-sketch-card"><img src="bridal-sketches.jpg" loading="lazy" alt="Pencil sketches of three bridal gown designs" /><img class="bridal-sketch-caption" src="bridal-sketch-caption.png" alt="" aria-hidden="true" /></figure>
+          <figure><img src="bridal-watercolour-results.png" loading="lazy" alt="Finished watercolour illustrations of the three bridal gowns" /></figure>
         </div>
       </section>
 
@@ -155,7 +168,7 @@
           <div class="form-row"><label>Your name <span>*</span><input name="Name" autocomplete="given-name" required /></label><label>Your surname <span>*</span><input name="Surname" autocomplete="family-name" required /></label></div><label>Email <span>*</span><input type="email" name="Email" autocomplete="email" required /></label><label>Company name / website URL<input name="Company / website" /></label><div class="form-row"><label>The bride <span>*</span><input name="Bride" placeholder="Full name" required /></label><label>The groom <span>*</span><input name="Groom" placeholder="Full name" required /></label></div><label>How did you hear about me?<select name="How did you hear about me"><option value="">Choose an option</option><option>Instagram</option><option>Google</option><option>Referral</option><option>Other</option></select></label><label>Wedding date <span>*</span><input type="date" name="Wedding date" required /></label><label>Wedding location <span>*</span><input name="Wedding location" required /></label><div class="form-row"><label>Estimated guest count<input type="number" min="1" name="Guest count" /></label><label>Artist hours<input type="number" min="1" step="0.5" name="Artist hours" /></label></div><label>Notes<textarea name="Notes" rows="4" placeholder="Tell me about your plans, timings or stationery ideas."></textarea></label><p class="form-note">Sending an enquiry does not confirm availability. I’ll reply to discuss the details and next steps.</p><button class="form-submit" type="submit">Send enquiry <span>↗</span></button>
         </form>
         <form class="enquiry-form" id="panel-commission" role="tabpanel" aria-labelledby="tab-commission" data-kind="Commission" hidden>
-          <label>Commission type <span>*</span><select name="Commission type" required><option value="">Choose a commission</option><option>Fashion illustration</option><option>Wedding stationery illustration</option><option>Other bespoke illustration</option></select></label><div class="form-row"><label>Your name <span>*</span><input name="Name" autocomplete="given-name" required /></label><label>Your surname <span>*</span><input name="Surname" autocomplete="family-name" required /></label></div><label>Email <span>*</span><input type="email" name="Email" autocomplete="email" required /></label><label>Company name / website URL<input name="Company / website" /></label><label>How did you hear about me?<select name="How did you hear about me"><option value="">Choose an option</option><option>Instagram</option><option>Google</option><option>Referral</option><option>Other</option></select></label><label>Deadline<input type="date" name="Deadline" /></label><label>Notes<textarea name="Notes" rows="5" placeholder="Describe the illustration, occasion, intended use and any references you have."></textarea></label><p class="form-note">Pricing and timing depend on the artwork and print requirements. I’ll confirm details with you before the commission is booked.</p><button class="form-submit" type="submit">Send enquiry <span>↗</span></button>
+          <label>Commission type <span>*</span><select name="Commission type" required><option value="">Choose a commission</option><option>Bridal gown illustration</option><option>Fashion illustration</option><option>Wedding stationery illustration</option><option>Other bespoke illustration</option></select></label><div class="form-row"><label>Your name <span>*</span><input name="Name" autocomplete="given-name" required /></label><label>Your surname <span>*</span><input name="Surname" autocomplete="family-name" required /></label></div><label>Email <span>*</span><input type="email" name="Email" autocomplete="email" required /></label><label>Company name / website URL<input name="Company / website" /></label><label>How did you hear about me?<select name="How did you hear about me"><option value="">Choose an option</option><option>Instagram</option><option>Google</option><option>Referral</option><option>Other</option></select></label><label>Deadline<input type="date" name="Deadline" /></label><label>Notes<textarea name="Notes" rows="5" placeholder="Describe the illustration, occasion, intended use and any references you have."></textarea></label><p class="form-note">Pricing and timing depend on the artwork and print requirements. I’ll confirm details with you before the commission is booked.</p><button class="form-submit" type="submit">Send enquiry <span>↗</span></button>
         </form>
       </section>
     </main>
